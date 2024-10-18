@@ -1,12 +1,17 @@
 import { createRouter, createWebHistory } from "vue-router";
-import LandingPage from "../components/home.vue";
+import LoginPage from "../components/home.vue";
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes: [
     {
       path: "/",
-      name: "landing-page",
-      component: LandingPage,
+      name: "login-page",
+      component: LoginPage,
+    },
+    {
+      path: "/home",
+      name: "home",
+      component: () => import("../components/home.vue"),
     },
     {
       path: "/ingredients",
@@ -17,6 +22,11 @@ const router = createRouter({
       path: "/recipes",
       name: "recipes",
       component: () => import("../components/recipes.vue"),
+    },
+    {
+      path: "/puzzle",
+      name: "puzzle-up",
+      component: () => import("../components/puzzleGame.vue"),
     },
     {
       path: "/recipes/:id",
