@@ -29,6 +29,11 @@ const router = createRouter({
       component: () => import("../components/puzzleGame.vue"),
     },
     {
+      path: "/blog",
+      name: "blog-list",
+      component: () => import("../components/blog.vue"),
+    },
+    {
       path: "/recipes/:id",
       name: "view-recipes",
       component: () => import("../components/viewRecipe.vue"),
